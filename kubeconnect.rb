@@ -1,8 +1,8 @@
 class Kubeconnect < Formula
   desc "Easily connect to any pod running in kubernetes"
   homepage "https://github.com/marijnkoesen/kubeconnect"
-  url "https://github.com/marijnkoesen/kubeconnect/archive/v0.1.1.tar.gz"
-  sha256 "3a634f3e4bb498674c83c321a635baadf6eec65e42ef52eecfcec0ca0cd4682d"
+  url "https://github.com/marijnkoesen/kubeconnect/archive/v0.1.2.tar.gz"
+  sha256 "bbf86669896d3608f7dcdbe4cfa4d1888196db1faea6a6f84e24383946eadc01"
   depends_on "golang" => "1.11"
 
   def install
@@ -23,6 +23,6 @@ class Kubeconnect < Formula
   test do
     # "2>&1" redirects standard error to stdout. The "2" at the end means "the
     # exit code should be 2".
-    assert_match "kubeconnect -h", shell_output("#{bin}/kubeconnect -h")
+    assert_match "kubeconnect version 0.1.2", shell_output("#{bin}/kubeconnect --version")
   end
 end
